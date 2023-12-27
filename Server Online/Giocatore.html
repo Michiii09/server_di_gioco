@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Giocatore</title>
+<link rel="stylesheet" href="Style.css">
+<link rel="icon" href="" type="”image/png”">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<navbar>
+<div class="navbar">
+<div class="Logo">
+<img src="" alt="Logo" class="Logo">
+</div>
+<div class="link">
+<a href="Index.html">Pagina Principale</a>
+<a href="">Articoli</a>
+<a href="">Pacchetti più convenienti</a>
+</div>
+</div>
+</navbar>
+<table class="tabella-giocatore">
+<thead>
+<tr class="dati">
+<th>Nome Utente</th>
+<th>E-Mail</th>
+<th>Password</th>
+<th>Id Utente</th>
+<th>Data Di Registrazione</th>
+<th>Trofei</th>
+<th>Esperienza</th>
+<th>Partite Giocate</th>
+<th>Partite Vinte</th>
+<th>Monete</th>
+<th>Gemme</th>
+<th>Cristalli</th>
+<th>Personaggi</th>
+<th>Cosmetici</th>
+</tr>
+</thead>
+<tbody id="corpo_tabella">
+</tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+
+var account = (
+{
+"nome_utente": "Michiii",
+"email": "michelebottiglieri7009@gmail.com",
+"password": "Samecat1970",
+"id_utente": "the_best",
+"data_di_registrazione": "26/12/2023",
+"trofei": 0,
+"esperienza": 0,
+"partite_giocate": 0,
+"partite_vinte": 0,
+"monete": 0,
+"gemme": 0,
+"cristalli": 0,
+"personaggi": ["giggio", "giuberto"],
+"cosmetici": ["icona_beta", "icona_profilo_lancio_globale"]
+}
+)
+
+
+costruiscitabella(account);
+
+function costruiscitabella(data){
+var tabella = document.getElementById("corpo_tabella");
+
+for(var i = 0; i < data.length; i++){
+var riga = `<tr>
+                            <td>$[data[i].nome_utente]</td>
+                            <td>$[data[i].email]</td>
+                            <td>$[data[i].password]</td>
+                            <td>$[data[i].id_utente]</td>
+                            <td>$[data[i].data_di_registrazione]</td>
+                            <td>$[data[i].trofei]</td>
+                            <td>$[data[i].esperienza]</td>
+                            <td>$[data[i].partite_giocate]</td>
+                            <td>$[data[i].partite_vinte]</td>
+                            <td>$[data[i].monete]</td>
+                            <td>$[data[i].gemme]</td>
+                            <td>$[data[i].cristalli]</td>
+                            <td>$[data[i].personaggi]</td>
+                            <td>$[data[i].cosmetici]</td>
+                    </tr>`;
+tabella.innerHTML += riga;
+}
+}
+</script>
+</body>
+</html>
